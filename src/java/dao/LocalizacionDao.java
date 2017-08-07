@@ -36,9 +36,9 @@ public class LocalizacionDao {
         
     }
     
-    public List<Municipios> getMunicipiosEstado(int idMunicipio){
-        Query queryMunicipiosEstado = entityManager.createNamedQuery("Municipios.findByIdMunicipio", Municipios.class);
-        queryMunicipiosEstado.setParameter("idMunicipio", idMunicipio);
+    public List<Municipios> getMunicipiosEstado(int idEstado){
+        Query queryMunicipiosEstado = entityManager.createNamedQuery("Municipios.findByIdEstado", Municipios.class);
+        queryMunicipiosEstado.setParameter("idEstado", idEstado);
         return queryMunicipiosEstado.getResultList();
     }
     

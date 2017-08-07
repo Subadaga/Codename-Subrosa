@@ -2,6 +2,7 @@ package controller;
 import dao.PacienteDao;
 import dao.DbConnection;
 import java.io.IOException;
+import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,69 +11,53 @@ import javax.servlet.http.HttpServletResponse;
 import model.Paciente;
 
 public class RegPacienteController extends HttpServlet {
-
+    
+        @EJB
+        PacienteDao pacienteDao;
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        request.setCharacterEncoding("UTF-8");
+        request.setCharacterEncoding("UTF-8");           
 
-        String validate = request.getParameter("buscar");
-                
-        if (request.getParameter("buscar") == null || validate.equals("") ) {
-            RequestDispatcher rd = request.getRequestDispatcher("/pagePacientes.jsp");
-            rd.forward(request, response);
-        } else {
-            // ===== OBTENCIÓN DE DATOS POR JSP =====
-            int buscarParam = Integer.parseInt(request.getParameter("buscar"));
+            String buscarParam = request.getParameter("buscar");
 
-            String method = request.getParameter("metodo");
+            //String method = request.getParameter("metodo");
 
-            // ===== OBTIENE TODOS LOS DATOS DEL TRABAJADOR ======
-            DbConnection conn = new DbConnection();
-            PacienteDao pacienteDao = new PacienteDao(conn);
-
-            // ===== CREACIÓN DEL OBJETO =====
-            Paciente paciente = new Paciente();
 
             try {
-                paciente = pacienteDao.findOneById(buscarParam);
                 
+                Paciente pacienteResultado = pacienteDao.getPaciente(buscarParam);
                 
-                // ===== ENVIA VALORES AL JSP =====
-                request.setAttribute("id_paciente", paciente.getId_paciente());
-                request.setAttribute("no_cama", paciente.getNum_cama());
-                request.setAttribute("codigo_postal", paciente.getCodigo_postal());
-                request.setAttribute("telefono_casa", paciente.getTelefono_casa());
-                request.setAttribute("telefono_cel", paciente.getTeltefno_cel());
-                request.setAttribute("fechaEval", paciente.getFecha_evaluacion());
-                request.setAttribute("fechaIngreso", paciente.getFecha_ingreso());
-                request.setAttribute("consulta_externa", paciente.getConsulta_externa());
-
-                request.setAttribute("nombre_paciente", paciente.getNombre_paciente());
-                request.setAttribute("apellido_paterno", paciente.getApellido_paterno_paciente());
-                request.setAttribute("apellido_materno", paciente.getApellido_materno_paciente());
-                request.setAttribute("nacimiento", paciente.getFecha_nacimiento());
-                request.setAttribute("estado", paciente.getEstado());
-                request.setAttribute("municipio", paciente.getMunicipio());
-                request.setAttribute("colonia", paciente.getColonia());
-                request.setAttribute("calle", paciente.getCalle());
-                request.setAttribute("estado_civil", paciente.getEstado_civil());
-
-                request.setAttribute("genero", paciente.getGenero());
-                request.setAttribute("sexo", paciente.getSexo());
-                request.setAttribute("religion", paciente.getReligion());
-
-                request.setAttribute("entrevista", paciente.getEntrevista());
+                if(pacienteResultado != null){  
+                    
+                    request.setAttribute("id_paciente", pacienteResultado.getIdPaciente());
+                    request.setAttribute("no_cama", pacienteResultado.getNoCama());
+                    request.setAttribute("codigo_postal", pacienteResultado.getCodigoPostal());
+                    request.setAttribute("telefono_casa", pacienteResultado.getTelefonoCasa());
+                    request.setAttribute("telefono_cel", pacienteResultado.getTelefonoCel());
+                    request.setAttribute("fechaEval", pacienteResultado.getFechaEvaluacion());
+                    request.setAttribute("fechaIngreso", pacienteResultado.getFechaIngreso());
+                    request.setAttribute("consulta_externa", pacienteResultado.getConsultaExterna());
+                    request.setAttribute("nombre_paciente", pacienteResultado.getNombre());
+                    request.setAttribute("apellido_paterno", pacienteResultado.getApellidoMaterno());
+                    request.setAttribute("apellido_materno", pacienteResultado.getApellidoPaterno());
+                    request.setAttribute("nacimiento", pacienteResultado.getFechaNacimiento());
+                    request.setAttribute("estado", pacienteResultado.getEstado());
+                    request.setAttribute("municipio", pacienteResultado.getMunicipio());
+                    request.setAttribute("colonia", pacienteResultado.getColonia());
+                    request.setAttribute("calle", pacienteResultado.getCalle());
+                    request.setAttribute("estado_civil", pacienteResultado.getEstadoCivil());
+                    request.setAttribute("genero", pacienteResultado.getGenero());
+                    request.setAttribute("sexo", pacienteResultado.getSexo());
+                    request.setAttribute("religion", pacienteResultado.getReligion());
+                    request.setAttribute("entrevista", pacienteResultado.getEntrevistaA()); 
+                }
 
             } catch (Exception e) {
 
-            } finally {
-                conn.disconnect();
-            }
-
+            }           
             RequestDispatcher red = request.getRequestDispatcher("/pagePacientes.jsp");
             red.forward(request, response);
-
-        }
+       
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -1,12 +1,8 @@
-<%-- 
-    Document   : login
-    Created on : 11-may-2017, 21:07:25
-    Author     : Andrea Osorio Aguilar
---%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="x" uri="http://java.sun.com/jstl/xml" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
-<%@ taglib prefix="sql" uri="http://java.sun.com/jstl/sql" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lange="es">
@@ -182,11 +178,46 @@
                                  <button type="submit" class="btn btn-save" >Borrar <span class="glyphicon glyphicon-trash"></span></button>
                                                                 
                             </form>
+                                 
+                            <sql:setDataSource
+                                    var="myDS"
+                                    driver="com.mysql.jdbc.Driver"
+                                    url="jdbc:mysql://localhost:3306/base_final"
+                                    user="root" password="Valeria"
+                                />
 
+                                <sql:query var="listaTrabajadores" dataSource="${myDS}">
+                                    SELECT * FROM trabajador;
+                                </sql:query>
+
+                                <div class="well form-horizontal">
+                                    <table class="table table-responsive">
+                                        <label class="control-label">Lista de trabajadores</label>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Nombre</th>
+                                            <th>Tipo de trabajador</th>
+                                            <th>Nombre de Usuario</th>
+                                        </tr>
+                                        <c:forEach var="trabajador" items="${listaTrabajadores.rows}">
+                                            <tr>
+                                                <td><c:out value="${trabajador.id_trabajador}" /></td>
+                                                <td><c:out value="${trabajador.nombre}" /></td>
+                                                <td><c:out value="${trabajador.tipo_trabajador}" /></td>
+                                                <td><c:out value="${trabajador.usuario}" /></td>
+                                            </tr>
+                                        </c:forEach>
+                                    </table>
+                                </div>
+
+          
                             <form name="registroTrabajadores" class="well form-horizontal" action="trabajador" onsubmit="return validarInformacion()" method='post'  id="form">
+                                
                                 <input type="hidden" name="metodo"   value="guardar">
+                                <label class="control-label">Agregar a un trabajador</label>
                                 <!-- Text input-->
                                 <div class="form-group">
+                                    
                                     <label class="control-label">Nombre del Trabajador</label>
                                     <div class="inputGroupContainer">
                                         <div class="input-group">

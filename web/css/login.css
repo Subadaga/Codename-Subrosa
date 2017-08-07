@@ -1,0 +1,16 @@
+body, html {
+    height: 100% !important;
+}
+
+.bg { 
+    /* The image used */
+    background-image: url("http://www.garuyo.com/sites/default/files/styles/large/public/images/2015/06/instituto-nacional-de-ciencias-medicas-y-nutricion-salvador-zubiran-ciudad-mexico_136112_628113414.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

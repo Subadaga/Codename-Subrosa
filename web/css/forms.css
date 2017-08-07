@@ -1,0 +1,322 @@
+/* === HOVER, ACTIVE, SELECTED GREEN === */
+.btn-primary:hover,
+.btn-primary-2:hover,
+.btn-primary-3:hover,
+.btn-primary-4:hover{
+    color:#fff;
+    background-color:#3b9;
+    border-color:#3a9
+}
+
+.btn-primary.active,
+.btn-primary:active,
+.open>.dropdown-toggle.btn-primary,
+.btn-primary-2.active,
+.btn-primary-2:active,
+.open>.dropdown-toggle.btn-primary-2,
+.btn-primary-3.active,
+.btn-primary-3:active,
+.open>.dropdown-toggle.btn-primary-3,
+.btn-primary-4.active,
+.btn-primary-4:active,
+.open>.dropdown-toggle.btn-primary-4{
+    color:#fff;
+    background-color:#3b9;
+    border-color:#3a9
+}
+
+.btn-primary.active.focus,
+.btn-primary.active:focus,
+.btn-primary.active:hover,
+.btn-primary:active.focus,
+.btn-primary:active:focus,
+.btn-primary:active:hover,
+.open>.dropdown-toggle.btn-primary.focus,
+.open>.dropdown-toggle.btn-primary:focus,
+.open>.dropdown-toggle.btn-primary:hover,
+.btn-primary-2.active.focus,
+.btn-primary-2.active:focus,
+.btn-primary-2.active:hover,
+.btn-primary-2:active.focus,
+.btn-primary-2:active:focus,
+.btn-primary-2:active:hover,
+.open>.dropdown-toggle.btn-primary-2.focus,
+.open>.dropdown-toggle.btn-primary-2:focus,
+.open>.dropdown-toggle.btn-primary-2:hover,
+.btn-primary-3.active.focus,
+.btn-primary-3.active:focus,
+.btn-primary-3.active:hover,
+.btn-primary-3:active.focus,
+.btn-primary-3:active:focus,
+.btn-primary-3:active:hover,
+.open>.dropdown-toggle.btn-primary-3.focus,
+.open>.dropdown-toggle.btn-primary-3:focus,
+.open>.dropdown-toggle.btn-primary-3:hover,
+.btn-primary-4.active.focus,
+.btn-primary-4.active:focus,
+.btn-primary-4.active:hover,
+.btn-primary-4:active.focus,
+.btn-primary-4:active:focus,
+.btn-primary-4:active:hover,
+.open>.dropdown-toggle.btn-primary-4.focus,
+.open>.dropdown-toggle.btn-primary-4:focus,
+.open>.dropdown-toggle.btn-primary-4:hover{
+    color:#fff;
+    background-color:#3b9;
+    border-color:#3ab
+}
+
+
+
+/* == BTN-PRIMARY-2 ==*/
+.btn-primary-2{
+    color:#fff;
+    background-color:#158;
+    border-color:#2e6da4
+}
+
+.btn-primary-2.focus,
+.btn-primary-2:focus{
+    color:#fff;
+    background-color:#158;
+    border-color:#3a9
+}
+
+.btn-primary-2.disabled.focus,
+.btn-primary-2.disabled:focus,
+.btn-primary-2.disabled:hover,
+.btn-primary-2[disabled].focus,
+.btn-primary-2[disabled]:focus,
+.btn-primary-2[disabled]:hover,
+fieldset[disabled] .btn-primary-2.focus,
+fieldset[disabled] .btn-primary-2:focus,
+fieldset[disabled] .btn-primary-2:hover{
+    background-color:#158;
+    border-color:#2e6da4
+}
+
+
+
+/* == BTN-PRIMARY-3 ==*/
+.btn-primary-3{
+    color:#fff;
+    background-color:#39c;
+    border-color:#3ae
+}
+
+.btn-primary-3.focus,
+.btn-primary-3:focus{
+    color:#fff;
+    background-color:#39c;
+    border-color:#3ae
+}
+
+.btn-primary-3.disabled.focus,
+.btn-primary-3.disabled:focus,
+.btn-primary-3.disabled:hover,
+.btn-primary-3[disabled].focus,
+.btn-primary-3[disabled]:focus,
+.btn-primary-3[disabled]:hover,
+fieldset[disabled] .btn-primary-3.focus,
+fieldset[disabled] .btn-primary-3:focus,
+fieldset[disabled] .btn-primary-3:hover{
+    background-color:#39c;
+    border-color:#3ae
+}
+
+
+
+/* == BTN-PRIMARY-4 ==*/
+.btn-primary-4{
+    color:#fff;
+    background-color:#1ac;
+    border-color:#19b
+}
+
+.btn-primary-4.focus,
+.btn-primary-4:focus{
+    color:#fff;
+    background-color:#1ac;
+    border-color:#19b
+}
+
+.btn-primary-4.disabled.focus,
+.btn-primary-4.disabled:focus,
+.btn-primary-4.disabled:hover,
+.btn-primary-4[disabled].focus,
+.btn-primary-4[disabled]:focus,
+.btn-primary-4[disabled]:hover,
+fieldset[disabled] .btn-primary-4.focus,
+fieldset[disabled] .btn-primary-4:focus,
+fieldset[disabled] .btn-primary-4:hover{
+    background-color:#1ac;
+    border-color:#19b
+}
+
+/* == BTN-SAVE ==*/
+.btn-save{
+    color:#fff;
+    background-color:#0aa;
+    border-color:#099
+}
+
+.btn-save.focus,
+.btn-save:focus{
+    color:#fff;
+    background-color:#0aa;
+    border-color:#099
+}
+
+.btn-save.disabled.focus,
+.btn-save.disabled:focus,
+.btn-save.disabled:hover,
+.btn-save[disabled].focus,
+.btn-save[disabled]:focus,
+.btn-save[disabled]:hover,
+fieldset[disabled] .btn-save.focus,
+fieldset[disabled] .btn-save:focus,
+fieldset[disabled] .btn-save:hover{
+    background-color:#0aa;
+    border-color:#099
+}
+
+
+/* === SAVE: HOVER, ACTIVE, SELECTED GREEN === */
+.btn-save:hover{
+    color:#fff;
+    background-color:#4bb;
+    border-color:#499
+}
+
+.btn-save.active,
+.btn-save:active,
+.open>.dropdown-toggle.btn-primary{
+    color:#fff;
+    background-color:#4bb;
+    border-color:#499
+}
+
+.btn-save.active.focus,
+.btn-save.active:focus,
+.btn-save.active:hover,
+.btn-save:active.focus,
+.btn-save:active:focus,
+.btn-save:active:hover,
+.open>.dropdown-toggle.btn-save.focus,
+.open>.dropdown-toggle.btn-save:focus,
+.open>.dropdown-toggle.btn-save:hover{
+    color:#fff;
+    background-color:#4bb;
+    border-color:#499
+}
+
+
+
+
+/* === SELECTED DEFAULT === */
+.btn-default:hover{
+    color:#fff;
+    background-color:#1ac;
+    border-color:#19b
+}
+
+.btn-default.active,
+.btn-default:active,
+.open>.dropdown-toggle.btn-default{
+    color:#fff;
+    background-color:#1ac;
+    border-color:#19b
+}
+
+.btn-default.active.focus,
+.btn-default.active:focus,
+.btn-default.active:hover,
+.btn-default:active.focus,
+.btn-default:active:focus,
+.btn-default:active:hover,
+.open>.dropdown-toggle.btn-default.focus,
+.open>.dropdown-toggle.btn-default:focus,
+.open>.dropdown-toggle.btn-default:hover{
+    color:#fff;
+    background-color:#1ac;
+    border-color:#19b
+}
+
+/* == FOCUS DEFAULT ==*/
+
+.btn-default.focus, .btn-default:focus{
+    /*background-color: #fff;*/
+}
+
+/* == SELECT RADIO DEFAULT ==*/
+
+.select-radio{
+    color: #fff;
+    background-color: #1ac;
+    border-color: #19b;
+}
+
+/* colors span inputs group */
+.input-group-addon.success {
+    color: rgb(255, 255, 255);
+    background-color: rgb(92, 184, 92);
+    border-color: rgb(76, 174, 76);
+}
+
+/* input success */
+.form-control.success {
+    background: #dff0d8;
+}
+
+
+.circleBase {
+    border-radius: 50%;
+}
+
+.type1 {
+    width: 100px;
+    height: 100px;
+    background: #4bb;
+    color:#fff;
+    padding-right: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.link-h{
+    display: block;
+    margin-bottom: 10px;
+}
+
+.link-h:hover{
+    text-decoration: none;
+}
+
+.h2-h{
+    display: inline;
+    padding-left: 20px;
+}
+
+.div-links{
+    padding-top: 50px;
+}
+
+.img-h{
+    height: 95px;
+    float: left;
+    margin: 0 20px;
+}
+
+.personal-h{
+    margin-bottom: 0;
+    text-align: right
+}
+
+.pull-left > a {
+    color: #fff;
+}
+
+.pull-left > a:hover {
+    text-decoration: none;
+}

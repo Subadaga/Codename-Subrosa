@@ -200,11 +200,11 @@
                                             <th>Nombre de Usuario</th>
                                         </tr>
                                         <c:forEach var="trabajador" items="${listaTrabajadores.rows}">
-                                            <tr>
-                                                <td><c:out value="${trabajador.id_trabajador}" /></td>
-                                                <td><c:out value="${trabajador.nombre}" /></td>
-                                                <td><c:out value="${trabajador.tipo_trabajador}" /></td>
-                                                <td><c:out value="${trabajador.usuario}" /></td>
+                                            <tr class="table-row"data-href="http://tutorialsplane.com">
+                                                <td style="cursor: pointer; color: blue;"><c:out value="${trabajador.id_trabajador}" /></td>
+                                                <td style="cursor: pointer; color: blue;"><c:out value="${trabajador.nombre}" /></td>
+                                                <td style="cursor: pointer; color: blue;"><c:out value="${trabajador.tipo_trabajador}" /></td>
+                                                <td style="cursor: pointer; color: blue;"><c:out value="${trabajador.usuario}" /></td>
                                             </tr>
                                         </c:forEach>
                                     </table>
@@ -306,10 +306,18 @@
             });
 
         </script>
+        
+        <script type="text/javascript">
+        $(document).ready(function($) {
+            $(".table-row").click(function() {
+                window.document.location = $(this).data("href");
+            });
+        });
+        </script>        
 
 
         <script>                                     
-                    
+    
             function validarBusqueda(){
                 var x = document.forms["regTrabajador"]["buscar"].value.replace(/\s+/g, '');
                 if(x == ""){

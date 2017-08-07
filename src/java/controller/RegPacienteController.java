@@ -1,6 +1,5 @@
 package controller;
 import dao.PacienteDao;
-import dao.DbConnection;
 import java.io.IOException;
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
@@ -9,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Paciente;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class RegPacienteController extends HttpServlet {
     
@@ -92,8 +93,23 @@ public class RegPacienteController extends HttpServlet {
         String sexo = request.getParameter("sexo");
         String religion = request.getParameter("religion");
         String entrevista = request.getParameter("entrevista");
-
         String method = request.getParameter("metodo");
+        
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+       // LocalDate localDate = LocalDate.now();
+       // dtf.format(localDate)
+        
+        if(fechaEval.equals("")){
+            fechaEval = dtf.format(LocalDate.now());
+        }
+        
+        if(fechaIngreso.equals("")){
+            fechaIngreso = dtf.format(LocalDate.now());
+        }        
+        
+        if(nacimiento.equals("")){
+            nacimiento = "21/10/1950";
+        }       
         
         System.out.println(sexo);
 
@@ -128,8 +144,6 @@ public class RegPacienteController extends HttpServlet {
                 pacienteDao.insertIntoPaciente(paciente);
 
             } catch (Exception e) {
-
-            } finally {
 
             }
 
